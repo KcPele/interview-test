@@ -78,7 +78,7 @@ import {
       }]
 }
   return (
-    <div className='border-[1px] mt-5 w-full px-3 py-6 rounded-lg  border-gray-200'>
+    <div className='border-[1px] mt-5 w-[100%] px-3 py-6 rounded-lg  border-gray-200'>
         <h2 className='text-lg mb-2'>Page View</h2>
         <p className='text-sm mb-4'>All time</p>
         <p className='text-5xl mb-4'>500</p>
