@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -14,7 +14,7 @@ import {
   import { format } from 'date-fns'
   import graphData from '../assests/data'
 
-
+import {IoIosInformationCircleOutline} from 'react-icons/io'
   ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -25,7 +25,7 @@ import {
     Tooltip,
     Legend
   );
-  export const options = {
+   const options = {
     responsive: true,
     elements: {
         point:{
@@ -36,7 +36,8 @@ import {
         x: {
             grid: {
               display: false
-            }
+            },
+        
           },
           y: {
             grid: {
@@ -66,12 +67,13 @@ import {
 
   const LineGraph: React.FC = () => {
       const [xData, setXData] = useState<string[]>(Object.keys( graphData.graph_data.views))
-      
+  
+    
     const data = {
         labels: xData.map(val => (format(new Date(val), 'dd MMM'))),
        
       datasets: [  {
-        // backgroundColor: '#FF5403',
+        backgroundColor: '#ffcbb3',
         borderColor: '#FF5403',
         fill: true,
         data: Object.values(graphData.graph_data.views).map(val => (val * 10))
@@ -79,7 +81,10 @@ import {
 }
   return (
     <div className='border-[1px] mt-5 w-[100%] px-3 py-6 rounded-lg  border-gray-200'>
-        <h2 className='text-lg mb-2'>Page View</h2>
+        <div className='mb-2 flex items-center justify-between'>
+        <h2 className='text-lg '>Page View </h2>
+          <IoIosInformationCircleOutline />
+        </div>
         <p className='text-sm mb-4'>All time</p>
         <p className='text-5xl mb-4'>500</p>
         <div>

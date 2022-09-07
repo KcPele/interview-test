@@ -55,7 +55,7 @@ const DoughtnutGraph: React.FC<Props> = ({ pieData, title }) => {
       };
       console.log(`bg-[${backgroundColor[0]}]`)
   return (
-    <div className='border-[1px] w-[100%] lg:max-w-[500px] px-4 py-5 rounded-lg  border-gray-200'>
+    <div className='border-[1px] w-[100%]  px-4 py-5 rounded-lg  border-gray-200'>
         <div className='flex items-center justify-between'>
             <h2 text-lg>{title}</h2>
             <a href="#" className='text-orange-500 text-sm' >view full reports</a>

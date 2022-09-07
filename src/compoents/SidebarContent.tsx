@@ -7,7 +7,7 @@ import {TbCameraPlus} from 'react-icons/tb'
 import {profile} from '../assests'
 const SidebarContent: React.FC = () => {
   return (
-    <div className=''>
+    <div className='min-h-[100vh]'>
         <div className='mx-[60px] mb-9'>Logo</div>
         <div >
             <h3 className='pl-[60px] mb-5 flex items-center gap-4 border-l-4 border-l-orange-500 text-orange-500'><MdOutlineDashboard /> Dashboard</h3>
