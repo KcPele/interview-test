@@ -3,7 +3,7 @@ import React from 'react'
 const Header = () => {
   return (
     <div className='mt-5'>
-        <h1 className='mb-2'>Good morning, Blessing ⛅️ </h1>
+        <h1 className='mb-2 text-[24px]'>Good morning, Blessing ⛅️ </h1>
         <p className='text-sm mb-5'>Check out your dashboard summary.</p>
         <div className='flex gap-3'>
             <p className='border-[1px] px-3 py-2 text-center rounded-full border-gray-200' >1 Day</p>

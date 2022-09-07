@@ -1,4 +1,5 @@
 export {default as Navbar} from './Navbar'
 export {default as Header} from './Header'
-
+export {default as LineGraph} from './LineGraph'
+export {default as DoughtnutGraph} from './DoughtnutGraph'
 export {default as SidebarContent} from './SidebarContent'

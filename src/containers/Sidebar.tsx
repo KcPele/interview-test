@@ -3,7 +3,7 @@ import { SidebarContent } from '../compoents'
 
 const Sidebar: React.FC = () => {
   return (
-    <div className='py-7  w-[304px] hidden md:block border-r-2'>
+    <div className='py-7  max-w-side  w-[304px] hidden md:block border-r-2'>
      <SidebarContent />
     </div>
   )

@@ -17,14 +17,14 @@ const SidebarContent: React.FC = () => {
                 <li className=' mb-4 flex items-center gap-4 '><AiOutlineHourglass /> Item 3</li>
             </ul>
         </div>
-        <div className='mx-[60px]'>
+        <div className='ml-[60px]'>
             <h3 className=' mb-5'>OTHERS 1</h3>
             <ul className=''>
                 <li className=' mb-4 flex items-center gap-4 '><TbCameraPlus /> Item 4</li>
                 <li className=' mb-4 flex items-center gap-4 '><MdOutlineDeleteOutline /> Item 5</li>
             </ul>
         </div>
-        <div className='mx-[60px]'>
+        <div className='ml-[60px]'>
             <h3 className=' mb-5'>OTHERS 2</h3>
             <ul className=''>
                 <li className=' mb-4 flex items-center gap-4 '><MdOutlineSubscriptions /> Item 6</li>
@@ -33,7 +33,7 @@ const SidebarContent: React.FC = () => {
             </ul>
         </div>
 
-        <div className='ml-[50px] md:mt-[160px] mt-[120px] mr-[10px] flex items-center justify-between'>
+        <div className='lg:ml-[50px] ml-[30px] md:mt-[160px] mt-[120px] mr-[10px] flex items-center justify-between'>
             <div className='flex items-center gap-3'><img src={profile} className='rounded-full' alt="blessing profile" /> <p>Blessing Daniels</p></div>
             <MdOutlineMoreHoriz />
         </div>
