@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, { useState} from 'react'
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -27,6 +27,7 @@ import {IoIosInformationCircleOutline} from 'react-icons/io'
   );
    const options = {
     responsive: true,
+   
     elements: {
         point:{
             radius: 0
@@ -34,6 +35,7 @@ import {IoIosInformationCircleOutline} from 'react-icons/io'
     },
     scales: {
         x: {
+          offset: true,
             grid: {
               display: false
             },
