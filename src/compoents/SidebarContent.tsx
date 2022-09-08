@@ -4,12 +4,12 @@ import { RiPencilLine} from 'react-icons/ri'
 import { AiOutlineHourglass } from 'react-icons/ai'
 import {MdOutlineDashboard, MdOutlineDeleteOutline,MdOutlineMoreHoriz,  MdOutlineSubscriptions, MdOutlineFilePresent, MdOutlineGroup, MdOutlineAlarm} from 'react-icons/md'
 import {TbCameraPlus} from 'react-icons/tb'
-import {profile} from '../assests'
+import {profile, logo} from '../assests'
 const SidebarContent: React.FC = () => {
     const itemsStyle = 'pl-[60px] mb-4 flex items-center gap-4 hover:border-l-[0.24rem] hover:border-l-orange-500 hover:text-orange-500 cursor-pointer'
   return (
     <div className='min-h-[100vh] pr-2 ml-0'>
-        <div className='mx-[60px] mb-9'>Logo</div>
+        <div className='mx-[60px] mb-9'><img src={logo} alt="mainstack logo"/></div>
         <div >
             <h3 className='pl-[60px] mb-5 flex items-center gap-4 border-l-[0.24rem]  border-l-orange-500 text-orange-500 cursor-pointer'><MdOutlineDashboard /> Dashboard</h3>
             <ul className=''>

@@ -10,11 +10,12 @@ interface Props {
         source?:  string |  null
     }[],
     title: string,
+    icons: string[]
     
     
 }
 ChartJS.register(ArcElement, Tooltip, Legend);
-const DoughtnutGraph: React.FC<Props> = ({ pieData, title }) => {
+const DoughtnutGraph: React.FC<Props> = ({ pieData, title, icons }) => {
     const  options = {
         responsive: true,
         plugins: {
@@ -63,7 +64,7 @@ const DoughtnutGraph: React.FC<Props> = ({ pieData, title }) => {
             <div className='main__doughtnut mt-6 flex justify-between items-center'>
            
                 <ul>
-                    {pieData.map((val, index) => (<li key={index} className='mb-1 sm:mb-4 flex items-center'>{val.country}{val.source} <span className='mx-3'>{val.percent}%</span> <span className='w-3 h-3 rounded-full' style={{'background': `${backgroundColor[index]}`}}></span></li>))}
+                    {pieData.map((val, index) => (<li key={index} className='mb-1 sm:mb-4 flex items-center capitalize'><img className='w-4 mr-1' src={icons[index]} /> {val.country}{val.source} <span className='mx-3'>{val.percent}%</span> <span className='w-3 h-3 rounded-full' style={{'background': `${backgroundColor[index]}`}}></span></li>))}
                     <li className='mb-4 flex items-center'>Others <span className='mx-3'>24%</span> <span className='w-3 h-3 rounded-full' style={{'background': `${backgroundColor[pieData.length]}`}}></span></li>
                 </ul>
                 <div className='max-w-[160px] '>

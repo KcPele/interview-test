@@ -1,7 +1,7 @@
 import React from 'react'
 import {DoughtnutGraph, Header, LineGraph, Navbar} from '../compoents'
-import data from '../assests/data'
-
+import data  from '../assests/data'
+import { countyIcons, companyIcons } from '../assests'
 const Main:React.FC = () => {
    
   return (
@@ -10,8 +10,8 @@ const Main:React.FC = () => {
         <Header />
         <LineGraph />
         <div className='flex mt-3 gap-3 flex-col lg:flex-row'>
-          <DoughtnutGraph pieData={data.top_locations} title="Top Location" />
-          <DoughtnutGraph pieData={data.top_sources} title="Top Referral source" />
+          <DoughtnutGraph pieData={data.top_locations} icons={countyIcons} title="Top Location" />
+          <DoughtnutGraph pieData={data.top_sources} icons={companyIcons} title="Top Referral source" />
         </div>
     </div>
   )
