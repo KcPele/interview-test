@@ -1,21 +1,11 @@
 import React from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
+import { IProps } from '../models';
 
-interface Props {
-    pieData: {
-        country?: string | null,
-        count: number,
-        percent: number,
-        source?:  string |  null
-    }[],
-    title: string,
-    icons: string[]
-    
-    
-}
+
 ChartJS.register(ArcElement, Tooltip, Legend);
-const DoughtnutGraph: React.FC<Props> = ({ pieData, title, icons }) => {
+const DoughtnutGraph: React.FC<IProps> = ({ pieData, title, icons }) => {
     const  options = {
         responsive: true,
         plugins: {
@@ -39,7 +29,7 @@ const DoughtnutGraph: React.FC<Props> = ({ pieData, title, icons }) => {
         labels: [...pieData.map(val => (val.country ? val.country : val.source)), "others"] ,
         datasets: [
           {
-            label: '# of Votes',
+            label: '# ',
             data: [...pieData.map(val => (val.percent)), 24],
             backgroundColor,
             borderColor: [

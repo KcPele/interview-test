@@ -1,5 +1,5 @@
 import React from 'react'
-import { SidebarContent } from '../compoents'
+import { SidebarContent } from '../components'
 
 const Sidebar: React.FC = () => {
   return (

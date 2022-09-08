@@ -1,4 +1,4 @@
-import React, { useState} from 'react'
+import React, { useState, useEffect} from 'react'
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -12,9 +12,9 @@ import {
   } from 'chart.js';
   import { Line } from 'react-chartjs-2';
   import { format } from 'date-fns'
-  import graphData from '../assests/data'
-
+  import useFetch from '../hooks/useFetch';
 import {IoIosInformationCircleOutline} from 'react-icons/io'
+
   ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -68,8 +68,24 @@ import {IoIosInformationCircleOutline} from 'react-icons/io'
   };
 
   const LineGraph: React.FC = () => {
-      const [xData, setXData] = useState<string[]>(Object.keys( graphData.graph_data.views))
-  
+    const { getData } = useFetch()
+    const [xData, setXData] = useState<string[]>([])
+    const [yData, setYData] = useState<number[]>([])
+
+   
+    
+    useEffect(() => {
+      
+      getData()
+      .then(data => {
+        setXData(Object.keys(data.graph_data.views))
+        setYData(Object.values(data.graph_data.views))
+      })
+   
+    
+   }, [])
+   
+      
     
     const data = {
         labels: xData.map(val => (format(new Date(val), 'dd MMM'))),
@@ -78,7 +94,7 @@ import {IoIosInformationCircleOutline} from 'react-icons/io'
         backgroundColor: '#ffcbb3',
         borderColor: '#FF5403',
         fill: true,
-        data: Object.values(graphData.graph_data.views).map(val => (val * 10))
+        data: yData.map((val: number) => (val * 10))
       }]
 }
   return (
