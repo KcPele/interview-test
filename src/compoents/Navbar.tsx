@@ -6,7 +6,7 @@ import SidebarContent from './SidebarContent';
 const Navbar: React.FC = () => {
     const [toggle, setToggle] = useState(false);
   return (
-    <div className='py-4  md:w-fit w-screen  flex justify-start gap-6 items-center'>
+    <div className='py-4  md:w-fit w-[100%]  flex justify-start gap-6 items-center'>
         <div className='md:hidden '>
         <HiMenuAlt4 size={24} onClick={() => setToggle(true)} />
         {toggle && (
@@ -22,7 +22,7 @@ const Navbar: React.FC = () => {
           </motion.div>
         )}
         </div>
-        <h1>Dasboard</h1>
+        <h1 className='text-2xl'>Dasboard</h1>
        
     </div>
   )

@@ -1,6 +1,7 @@
 import React from 'react'
 
-const Header = () => {
+const Header: React.FC = () => {
+  const headerStyles = 'border-[1px] px-3 py-2 text-center rounded-full border-gray-200 hover:border-orange-500 hover:text-orange-500 cursor-pointer'
   return (
     <div className='mt-5'>
       <div className='flex items-center justify-between'>
@@ -8,15 +9,15 @@ const Header = () => {
         <h1 className='mb-2 text-[24px]'>Good morning, Blessing ⛅️ </h1>
         <p className='text-sm mb-5'>Check out your dashboard summary.</p>
         </div>
-        <a className='text-[#FF5403]' href='#'>View analytics</a>
+        <a className='text-[#FF5403]' href='#view'>View analytics</a>
       </div>
         <div className='flex gap-3 flex-wrap'>
-            <p className='border-[1px] px-3 py-2 text-center rounded-full border-gray-200' >1 Day</p>
-            <p className='border-[1px] px-3 py-2 text-center rounded-full border-gray-200' >3 Days</p>
-            <p className='border-[1px] px-3 py-2 text-center rounded-full border-gray-200' >7 Days</p>
-            <p className='border-[1px] px-3 py-2 text-center rounded-full border-gray-200' >30 Days</p>
-            <p className='border-[1px] px-3 py-2 text-center rounded-full border-orange-500 bg-orange-100 text-orange-500' >All Time</p>
-            <p className='border-[1px] px-3 py-2 text-center rounded-full border-gray-200' >Cutom Date</p>
+            <p className={`${headerStyles}`} >1 Day</p>
+            <p className={`${headerStyles}`} >3 Days</p>
+            <p className={`${headerStyles}`} >7 Days</p>
+            <p className={`${headerStyles}`} >30 Days</p>
+            <p className='border-[1px] px-3 py-2 text-center rounded-full border-orange-500 bg-orange-100 text-orange-500 cursor-pointer'>All Time</p>
+            <p className={`${headerStyles}`} >Cutom Date</p>
         </div>
     </div>
   )

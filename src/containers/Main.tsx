@@ -5,7 +5,7 @@ import data from '../assests/data'
 const Main:React.FC = () => {
    
   return (
-    <div className='pl-[50px] md:px-[50px] md:w-[80%] w-[100%]'>
+    <div className='px-4 sm:px-9 md:px-[50px] md:w-[80%] w-[100%]'>
        <Navbar />
         <Header />
         <LineGraph />
