@@ -22,7 +22,7 @@ const Navbar: React.FC = () => {
           </motion.div>
         )}
         </div>
-        <h1 className='text-2xl'>Dasboard</h1>
+        <h1 className='text-xl font-semibold'>Dasboard</h1>
        
     </div>
   )

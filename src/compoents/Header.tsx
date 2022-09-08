@@ -6,12 +6,12 @@ const Header: React.FC = () => {
     <div className='mt-5'>
       <div className='flex items-center justify-between'>
         <div>
-        <h1 className='mb-2 text-[24px]'>Good morning, Blessing ⛅️ </h1>
-        <p className='text-sm mb-5'>Check out your dashboard summary.</p>
+        <h1 className='mb-2 text-2xl font-bold'>Good morning, Blessing ⛅️ </h1>
+        <p className='text-sm mb-5 font-medium text-[#31373D]'>Check out your dashboard summary.</p>
         </div>
         <a className='text-[#FF5403]' href='#view'>View analytics</a>
       </div>
-        <div className='flex gap-3 flex-wrap'>
+        <div className='flex gap-3 flex-wrap text-[#31373D] font-semibold'>
             <p className={`${headerStyles}`} >1 Day</p>
             <p className={`${headerStyles}`} >3 Days</p>
             <p className={`${headerStyles}`} >7 Days</p>

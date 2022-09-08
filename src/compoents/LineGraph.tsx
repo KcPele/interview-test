@@ -84,11 +84,11 @@ import {IoIosInformationCircleOutline} from 'react-icons/io'
   return (
     <div className='border-[1px] mt-5 w-[100%] px-3 py-6 rounded-lg  border-gray-200'>
         <div className='mb-2 flex items-center justify-between'>
-        <h2 className='text-lg '>Page View </h2>
+        <h2 className='text-lg font-bold '>Page View </h2>
           <IoIosInformationCircleOutline />
         </div>
         <p className='text-sm mb-4'>All time</p>
-        <p className='text-5xl mb-4'>500</p>
+        <p className='text-5xl mb-4 font-bold'>500</p>
         <div>
         <Line options={options} data={data} />
         </div>
