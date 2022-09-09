@@ -73,19 +73,24 @@ import useFetch from '../hooks/useFetch';
     let xVal = isLoading  ? [] : Object.keys(graphData.graph_data.views)
     let yVal: number[] = isLoading ? [] : Object.values(graphData.graph_data.views)
 
-  
-    
-      
-    const data = {
+    const canvas = document.getElementById('myChart') as HTMLCanvasElement | null;
+
+      const ctx = canvas?.getContext("2d");
+      const gradient = ctx?.createLinearGradient(0, 0, 0, 323);
+      gradient?.addColorStop(0, 'rgba(255, 84, 3, 0.2)');   
+      gradient?.addColorStop(1, 'rgba(255, 84, 3, 0)');
+      const data =  {
         labels: xVal.map(val => (format(new Date(val), 'dd MMM'))),
        
       datasets: [  {
-        backgroundColor: '#ffcbb3',
+        backgroundColor: gradient,
         borderColor: '#FF5403',
         fill: true,
         data: yVal.map((val: number) => (val * 10))
       }]
 }
+    
+
   return (
     <div className='border-[1px] mt-5 w-[100%] px-3 py-6 rounded-lg  border-gray-200'>
         <div className='mb-2 flex items-center justify-between'>
@@ -95,7 +100,7 @@ import useFetch from '../hooks/useFetch';
         <p className='text-sm mb-4'>All time</p>
         <p className='text-5xl mb-4 font-bold'>500</p>
         <div>
-        <Line options={options} data={data} />
+        <Line id='myChart' options={options} data={data} />
         </div>
     </div>
   )
