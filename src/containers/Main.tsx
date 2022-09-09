@@ -2,20 +2,24 @@ import React, {useState, useEffect } from 'react'
 import {DoughtnutGraph, Header, LineGraph, Navbar} from '../components'
 import { countyIcons, companyIcons } from '../assests'
 import { ITopLocations, ITopSources } from '../models'
-import useFetch from '../hooks/useFetch'
+
 
 const Main:React.FC = () => {
-  const { getData } = useFetch()
     const [location, setLocation] = useState<ITopLocations[]>([])
     const [source, setSource] = useState<ITopSources[]>([])
 
     useEffect(() => {
-       getData()
-       .then(data => {
-        setLocation(data.top_locations)
-        setSource(data.top_sources)
-       })
-    }, [ getData])
+
+      let getData = async () => {
+         let response = await fetch('http://test.api.mainstack.io/')
+          let data = await response.json()
+          console.log(data)
+         setLocation(data.top_locations)
+         setSource(data.top_sources)
+       }
+      getData()
+    
+    }, [ ])
    
   return (
     <div className='px-4 mb-3 sm:px-9 md:px-[50px] md:w-[80%] w-[100%]'>
