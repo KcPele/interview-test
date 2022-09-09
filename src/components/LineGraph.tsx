@@ -12,8 +12,8 @@ import {
   } from 'chart.js';
   import { Line } from 'react-chartjs-2';
   import { format } from 'date-fns'
-  import useFetch from '../hooks/useFetch';
 import {IoIosInformationCircleOutline} from 'react-icons/io'
+import useFetch from '../hooks/useFetch';
 
   ChartJS.register(
     CategoryScale,
@@ -68,11 +68,12 @@ import {IoIosInformationCircleOutline} from 'react-icons/io'
   };
 
   const LineGraph: React.FC = () => {
-    const { isLoading, data:graphData } = useFetch()
-    let xVal = isLoading ? [] : Object.keys(graphData.graph_data.views)
+    const {isLoading, data:graphData } = useFetch()
+  
+    let xVal = isLoading  ? [] : Object.keys(graphData.graph_data.views)
     let yVal: number[] = isLoading ? [] : Object.values(graphData.graph_data.views)
 
-   
+  
     
       
     const data = {

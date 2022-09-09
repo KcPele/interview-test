@@ -17,7 +17,7 @@ export interface IProps {
 }
 
 export interface IData {
-    graph_view: IGraphData,
+    graph_data: IGraphData,
     top_locations: {
         source: string;
         count: number;

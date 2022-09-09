@@ -1,17 +1,17 @@
 import { useQuery } from "@tanstack/react-query"
 
 const useFetch = () => {
-  const { isLoading, error, data } = useQuery(['graphData'], () =>
+
+  const { isLoading, data, error } = useQuery(['graphData'], () =>
   fetch('http://test.api.mainstack.io/').then(res =>
     res.json()
   )
 )
-
-  
   return {
 
     isLoading,
     data,
+
     error
   }
 }
