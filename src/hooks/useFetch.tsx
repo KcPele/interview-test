@@ -1,13 +1,18 @@
-import { useCallback } from "react"
-const useFetch = () => {
+import { useQuery } from "@tanstack/react-query"
 
-    const getData =  useCallback(async () => {
-          let response = await fetch('http://test.api.mainstack.io/')
-          return await response.json()
-    }, [])
+const useFetch = () => {
+  const { isLoading, error, data } = useQuery(['graphData'], () =>
+  fetch('http://test.api.mainstack.io/').then(res =>
+    res.json()
+  )
+)
+
   
   return {
-    getData
+
+    isLoading,
+    data,
+    error
   }
 }
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react'
+import React from 'react'
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -68,33 +68,21 @@ import {IoIosInformationCircleOutline} from 'react-icons/io'
   };
 
   const LineGraph: React.FC = () => {
-    const { getData } = useFetch()
-    const [xData, setXData] = useState<string[]>([])
-    const [yData, setYData] = useState<number[]>([])
+    const { isLoading, data:graphData } = useFetch()
+    let xVal = isLoading ? [] : Object.keys(graphData.graph_data.views)
+    let yVal: number[] = isLoading ? [] : Object.values(graphData.graph_data.views)
 
    
     
-    useEffect(() => {
       
-      getData()
-      .then(data => {
-        setXData(Object.keys(data.graph_data.views))
-        setYData(Object.values(data.graph_data.views))
-      })
-   
-    
-   }, [ getData])
-   
-      
-    
     const data = {
-        labels: xData.map(val => (format(new Date(val), 'dd MMM'))),
+        labels: xVal.map(val => (format(new Date(val), 'dd MMM'))),
        
       datasets: [  {
         backgroundColor: '#ffcbb3',
         borderColor: '#FF5403',
         fill: true,
-        data: yData.map((val: number) => (val * 10))
+        data: yVal.map((val: number) => (val * 10))
       }]
 }
   return (
