@@ -15,7 +15,7 @@ const Main:React.FC = () => {
         setLocation(data.top_locations)
         setSource(data.top_sources)
        })
-    }, [])
+    }, [ getData])
    
   return (
     <div className='px-4 mb-3 sm:px-9 md:px-[50px] md:w-[80%] w-[100%]'>

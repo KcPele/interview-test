@@ -83,7 +83,7 @@ import {IoIosInformationCircleOutline} from 'react-icons/io'
       })
    
     
-   }, [])
+   }, [ getData])
    
       
     
