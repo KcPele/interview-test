@@ -76,7 +76,7 @@ import useFetch from '../hooks/useFetch';
     const canvas = document.getElementById('myChart') as HTMLCanvasElement | null;
 
       const ctx = canvas?.getContext("2d");
-      const gradient = ctx?.createLinearGradient(0, 0, 0, 343);
+      const gradient = ctx?.createLinearGradient(0, 0, 0, 383);
       gradient?.addColorStop(0, 'rgba(255, 84, 3, 0.2)');   
       gradient?.addColorStop(1, 'rgba(255, 84, 3, 0)');
       const data =  {
